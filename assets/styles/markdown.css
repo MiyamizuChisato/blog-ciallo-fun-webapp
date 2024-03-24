@@ -1,0 +1,53 @@
+html.dark .shiki,
+html.dark .shiki span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--shiki-dark-bg) !important;
+    font-style: var(--shiki-dark-font-style) !important;
+    font-weight: var(--shiki-dark-font-weight) !important;
+    text-decoration: var(--shiki-dark-text-decoration) !important;
+}
+
+#__nuxt .markdown-body {
+    background-color: var(--c-screen);
+    color: var(--c-stress);
+}
+
+#__nuxt .markdown-body p {
+    line-height: 32px;
+}
+
+#__nuxt .markdown-body h1,
+#__nuxt .markdown-body h2,
+#__nuxt .markdown-body h3,
+#__nuxt .markdown-body h4,
+#__nuxt .markdown-body h5,
+#__nuxt .markdown-body h6 {
+    border: none;
+}
+
+#__nuxt .markdown-body blockquote {
+    padding: 12px;
+    background: var(--c-blockquote);
+    border-color: var(--c-muted);
+}
+
+#__nuxt .markdown-body pre {
+    background: var(--c-blockquote) !important;
+}
+
+#__nuxt .markdown-body img {
+    width: 100%;
+    aspect-ratio: 1.77778;
+    display: block;
+    margin: 32px 0;
+}
+
+#__nuxt .markdown-body table td,
+#__nuxt .markdown-body table th {
+    background-color: var(--c-blockquote);
+    border-color: var(--c-muted);
+}
+
+#__nuxt .markdown-body a {
+    color: var(--c-primary);
+}

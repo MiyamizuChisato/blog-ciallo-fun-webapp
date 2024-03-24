@@ -1,0 +1,61 @@
+@font-face {
+    font-family: PingFang SC;
+    font-style: normal;
+    font-display: swap;
+    src: url(assets/font/PingFangSC.woff2) format('woff2')
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-display: swap;
+    src: url(assets/font/Roboto.ttf)
+}
+
+* {
+    font-family: Roboto, "PingFang SC", sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 12px;
+    background: var(--c-scroll);
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+:root {
+    --s: 4;
+    --h: 40;
+    --speed: 1.6s;
+    --c-screen: #FFFFFFFF;
+    --c-blockquote: #F1F1F1FF;
+    --c-inner: #EFEFEFFF;
+    --c-scroll: #c0c0c0;
+    --c-stress: #0B0B0BDE;
+    --c-holder: #71717AFF;
+    --c-muted: #A0A4AAFF;
+    --c-primary: #2563EBFF;
+    --c-skeleton-light: #e1e1e1;
+    --c-skeleton-deep: #fefefe;
+    --c-nav: rgba(255, 255, 255, 0.5)
+}
+
+html.dark {
+    --c-screen: #000000FF;
+    --c-blockquote: #121212FF;
+    --c-inner: #272727FF;
+    --c-scroll: #3a3a3aff;
+    --c-stress: #FAFAFAFF;
+    --c-holder: #E0E0E0FF;
+    --c-muted: #6C6E72FF;
+    --c-primary: #2563EBFF;
+    --c-skeleton-light: #1e1e1e;
+    --c-skeleton-deep: #010101;
+    --c-nav: rgba(0, 0, 0, 0.5);
+}
