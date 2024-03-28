@@ -13,7 +13,7 @@
       <v-tab class="text-stress" to="/links">
         友邻
       </v-tab>
-      <v-tab class="text-stress" to="/friends">
+      <v-tab class="text-stress" to="/users">
         圈子
       </v-tab>
     </v-tabs>

@@ -99,11 +99,11 @@ const skills = [
       <div class="flex my-4">
         <div class="tag-container flex flex-nowrap">
           <div v-for="(skill,index) in skills" :key="index">
-            <div class="bg-inner my-4 mx-2 flex justify-center items-center w-30 h-30 rounded-6 translate-x--12">
-              <i class="scale-400" :class="skill.top"/>
+            <div class="bg-inner my-4 mx-2 flex justify-center items-center p-7 rounded-6 translate-x--12">
+              <i class="text-14" :class="skill.top"/>
             </div>
-            <div class="bg-inner my-4 mx-2 flex justify-center items-center w-30 h-30 rounded-6">
-              <i class="scale-400" :class="skill.bottom"/>
+            <div class="bg-inner my-4 mx-2 flex justify-center items-center p-7 rounded-6">
+              <i class="text-14" :class="skill.bottom"/>
             </div>
           </div>
         </div>

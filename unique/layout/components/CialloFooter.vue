@@ -3,7 +3,9 @@
 </script>
 
 <template>
-  <v-footer color="transparent">123</v-footer>
+  <v-footer color="transparent">
+
+  </v-footer>
 </template>
 
 <style scoped>

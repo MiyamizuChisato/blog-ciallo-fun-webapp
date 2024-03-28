@@ -11,7 +11,7 @@ const words = computed(() => {
     return [...data.value, "", "", "", ""]
   return ["", "", "", ""]
 })
-const loader = useThrottleFn(async () => {
+const loader = useDebounceFn(async () => {
   if (data.value) {
     const value = await $fetch<string[]>('api/words')
     data.value = [...data.value, ...value]

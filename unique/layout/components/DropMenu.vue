@@ -24,7 +24,7 @@ const menus = [
     name: '友邻'
   },
   {
-    path: '/friends',
+    path: '/users',
     name: '圈子'
   },
 ]
