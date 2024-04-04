@@ -1,7 +1,3 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
   <div class="aspect-ratio-16/9">
     <skeleton class="w-full h-full"/>

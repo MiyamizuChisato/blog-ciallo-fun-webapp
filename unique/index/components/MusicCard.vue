@@ -3,33 +3,35 @@ import music from 'assets/images/music.jpeg'
 </script>
 
 <template>
-  <front-card class="!h-96">
-    <template #full>
-      <div class="image-container h-full">
-        <v-img height="100%" cover :src="music"/>
-      </div>
-    </template>
-    <template #head>
-      <div class="text-dark-holder">音乐偏好</div>
-    </template>
-    <template #body>
-      <div class="text-catch text-dark-stress">
-        <div>
-          ACG、纯音乐
+  <div class="grid-col-span-12 lg:grid-col-span-6">
+    <front-card class="h-128">
+      <template #full>
+        <div class="image-container h-full">
+          <v-img height="100%" cover :src="music"/>
         </div>
-        <div>
-          Yorushika
+      </template>
+      <template #head>
+        <div class="text-dark-holder">音乐偏好</div>
+      </template>
+      <template #body>
+        <div class="text-catch text-dark-stress">
+          <div>
+            ACG、纯音乐
+          </div>
+          <div>
+            Yorushika
+          </div>
         </div>
-      </div>
-    </template>
-    <template #foot>
-      <div class="text-end">
-        <a class="text-dark-holder decoration-none" href="https://yorushika.com/" target="_blank">
-          关于 yorushika 的信息
-        </a>
-      </div>
-    </template>
-  </front-card>
+      </template>
+      <template #foot>
+        <div class="text-end">
+          <a class="text-dark-holder decoration-none" href="https://yorushika.com/" target="_blank">
+            关于 yorushika 的信息
+          </a>
+        </div>
+      </template>
+    </front-card>
+  </div>
 </template>
 
 <style scoped>

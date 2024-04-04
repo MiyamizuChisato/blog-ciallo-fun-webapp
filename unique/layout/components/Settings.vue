@@ -7,7 +7,7 @@ import ThemeSetting from "~/unique/layout/components/ThemeSetting.vue";
 </script>
 
 <template>
-  <div class="position-absolute right-4 md:right-24">
+  <div class="position-absolute right-4 lg:right-12">
     <theme-setting/>
     <language-setting/>
     <login-setting/>

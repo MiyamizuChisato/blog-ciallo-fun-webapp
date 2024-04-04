@@ -20,8 +20,8 @@ const loader = useDebounceFn(async () => {
 </script>
 
 <template>
-  <div class="xl:w-1080px w-full p-2 mb-20 mx-auto">
-    <masonry-wall :items="words" :ssr-column="4" :column-width="240" :gap="16">
+  <div class="xl:w-1180px p-2 mx-auto">
+    <masonry-wall :items="words" :ssr-column="4" :column-width="240" :gap="20">
       <template #default="{ item, index }">
         <word v-if="item!==''" @click="sheet = true" :message="item"/>
         <word-card-loading v-else :loader="loader"/>

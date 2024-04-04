@@ -3,26 +3,28 @@ import focus from 'assets/images/focus.jpg'
 </script>
 
 <template>
-  <front-card class="!h-96">
-    <template #full>
-      <div class="image-container h-full">
-        <v-img height="100%" cover :src="focus"/>
-      </div>
-    </template>
-    <template #head>
-      <div class="text-dark-holder">关注偏好</div>
-    </template>
-    <template #body>
-      <div class="text-catch text-dark-stress">
-        计算机、数码科技
-      </div>
-    </template>
-    <template #foot>
-      <div class="text-dark-holder text-end">
-        计算机软硬件 / 代码框架
-      </div>
-    </template>
-  </front-card>
+  <div class="grid-col-span-12 lg:grid-col-span-6">
+    <front-card class="h-128">
+      <template #full>
+        <div class="image-container h-full">
+          <v-img height="100%" cover :src="focus"/>
+        </div>
+      </template>
+      <template #head>
+        <div class="text-dark-holder">关注偏好</div>
+      </template>
+      <template #body>
+        <div class="text-catch text-dark-stress">
+          计算机、数码科技
+        </div>
+      </template>
+      <template #foot>
+        <div class="text-dark-holder text-end">
+          计算机软硬件 / 代码框架
+        </div>
+      </template>
+    </front-card>
+  </div>
 </template>
 
 <style scoped>

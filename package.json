@@ -10,10 +10,11 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@iconify-json/devicon": "^1.1.36",
     "@iconify-json/ic": "^1.1.17",
-    "@iconify-json/line-md": "^1.1.36",
-    "@iconify-json/logos": "^1.1.42",
+    "@iconify-json/line-md": "^1.1.37",
     "@pinia/nuxt": "^0.5.1",
+    "@types/scrollreveal": "^0.0.11",
     "@yeger/vue-masonry-wall": "^5.0.8",
     "aos": "3.0.0-beta.6",
     "cheerio": "1.0.0-rc.12",
@@ -21,17 +22,19 @@
     "markdown-it": "^14.1.0",
     "nuxt": "^3.11.1",
     "pinia": "^2.1.7",
+    "scrollreveal": "^4.0.9",
     "vue": "^3.4.21",
-    "vue-router": "^4.3.0"
+    "vue-router": "^4.3.0",
+    "vue-toastification": "2.0.0-rc.5"
   },
   "devDependencies": {
-    "@shikijs/markdown-it": "^1.2.0",
+    "@shikijs/markdown-it": "^1.2.1",
     "@types/aos": "^3.0.7",
     "@types/markdown-it": "^13.0.7",
-    "@unocss/nuxt": "^0.58.6",
+    "@unocss/nuxt": "^0.58.8",
     "@vueuse/core": "^10.9.0",
     "@vueuse/nuxt": "^10.9.0",
     "vite-plugin-vuetify": "^2.0.3",
-    "vuetify": "^3.5.9"
+    "vuetify": "^3.5.13"
   }
 }

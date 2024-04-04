@@ -8,7 +8,7 @@ const lightTheme = {
         success: '#16A34AFF',
         warning: '#F97316FF',
         error: '#E11D48FF',
-        greys:'#FAFAFAFF'
+        greys: '#FAFAFAFF'
     },
 }
 const darkTheme = {
@@ -18,18 +18,22 @@ const darkTheme = {
         success: '#16A34AFF',
         warning: '#F97316FF',
         error: '#E11D48FF',
-        greys:'#212121FF'
+        greys: '#212121FF'
     },
 }
 export default defineNuxtPlugin((app) => {
     const vuetify = createVuetify({
+        ssr: true,
+        components: {
+            VRow: {}
+        },
         theme: {
             defaultTheme: 'lightTheme',
             themes: {
                 lightTheme,
                 darkTheme
             }
-        }
+        },
     })
     app.vueApp.use(vuetify)
 })

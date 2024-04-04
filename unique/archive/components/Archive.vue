@@ -2,7 +2,8 @@
 import avatar from 'assets/images/avatar.jpg'
 import Anchors from "~/unique/archive/components/Anchors.vue";
 import AosMarkdownIt from "~/unique/archive/components/AosMarkdownIt.vue";
-import a from '~/assets/images/yasuo.jpg'
+import a from '~/assets/images/game.jpg'
+
 const route = useRoute();
 const url = "https://fun-ciallo-blog-1302869254.cos.ap-shanghai.myqcloud.com/blog%2Fmarkdown%2Ffun%20game.md"
 const {data} = await useFetch('/api/markdown', {
@@ -11,7 +12,6 @@ const {data} = await useFetch('/api/markdown', {
     id: route.params.id
   }
 })
-
 </script>
 
 <template>

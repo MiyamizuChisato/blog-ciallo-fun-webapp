@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full hidden md:block">
+  <div class="w-full hidden lg:block">
     <v-tabs color="primary" align-tabs="center" hide-slider>
       <v-tab class="text-stress" to="/">
         主页
@@ -13,8 +13,8 @@
       <v-tab class="text-stress" to="/links">
         友邻
       </v-tab>
-      <v-tab class="text-stress" to="/users">
-        圈子
+      <v-tab class="text-stress" to="/logs">
+        日志
       </v-tab>
     </v-tabs>
   </div>

@@ -36,6 +36,13 @@ export default defineConfig({
                 wrapper: '#18181BFF',
                 inner: '#272727FF'
             },
+        },
+        breakpoints: {
+            xs: '320px',
+            sm: '640px',
+            md: '768px',
+            lg: '1024px',
+            xl: '1280px'
         }
     },
     shortcuts: [
@@ -47,7 +54,7 @@ export default defineConfig({
             'text-stress': 'text-light-stress dark:text-dark-stress',
             'text-holder': 'text-light-holder dark:text-dark-holder',
             'text-muted': 'text-light-muted dark:text-dark-muted',
-            'text-catch':'text-9 line-height-10 text-stress font-bold'
+            'text-catch': 'text-9 line-height-10 text-stress font-bold'
         },
         {
             'bg-primary': 'bg-light-primary dark:bg-dark-primary',

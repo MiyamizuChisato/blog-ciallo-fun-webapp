@@ -1,10 +1,18 @@
 <script setup lang="ts">
 import OauthSetting from "~/unique/layout/components/OauthSetting.vue";
-import {useDisplay} from "vuetify";
 import avatar from '~/assets/images/avatar.jpg'
+import {useDisplay} from "vuetify";
+import {loginApi} from "~/api/user";
+
+const userStore = useUserStore();
 const {mdAndUp} = useDisplay();
 const dialog = ref(false)
 const sign = ref('sign-in')
+const userAuth = ref({
+  email: '',
+  password: ''
+})
+const isLogin = computed(() => userStore.isLogin)
 const label = computed(() => {
   if (sign.value === 'sign-in') {
     return '去注册'
@@ -20,25 +28,46 @@ function toggleWindow() {
   }
 }
 
+async function loginTrigger() {
+  const {payload} = await loginApi(userAuth.value)
+  localStorage.setItem("token", payload)
+  await userStore.getCurrentUser()
+  userAuth.value.email = ''
+  userAuth.value.password = ''
+  dialog.value = false
+}
+
+function logout() {
+  localStorage.removeItem("token")
+  userStore.currentUser = null
+}
+
+onMounted(async () => {
+  if (localStorage.getItem("token") != null) {
+    await userStore.getCurrentUser()
+  }
+})
 </script>
 
 <template>
-  <v-btn @click="dialog=true" color="primary" variant="tonal">
+  <v-btn v-if="!isLogin" @click="dialog=true" color="primary" variant="tonal">
     Login
   </v-btn>
-  <!--    <v-btn class="text-stress" icon="">-->
-  <!--      <v-avatar size="32" color="primary">C</v-avatar>-->
-  <!--      <v-menu activator="parent" location="bottom end">-->
-  <!--        <div class="p-4 mt-2 rounded-2 shadow text-stress bg-wrapper">-->
-  <!--          <div class="my-1 py-1 px-4 rounded cursor-pointer hover:bg-inner" v-ripple>-->
-  <!--            Profile-->
-  <!--          </div>-->
-  <!--          <div class="my-1 py-1 px-4 rounded cursor-pointer hover:bg-inner" v-ripple>-->
-  <!--            Logout-->
-  <!--          </div>-->
-  <!--        </div>-->
-  <!--      </v-menu>-->
-  <!--    </v-btn>-->
+  <v-btn v-else class="text-stress" icon="">
+    <v-avatar size="32" color="primary">C</v-avatar>
+    <v-menu activator="parent" location="bottom end">
+      <div class="p-4 mt-2 rounded-2 shadow bg-wrapper">
+        <NuxtLink class="decoration-none" to="/user/1">
+          <div class="text-stress my-1 py-1 px-4 rounded cursor-pointer hover:bg-inner" v-ripple>
+            Profile
+          </div>
+        </NuxtLink>
+        <div @click="logout" class="text-error my-1 py-1 px-4 rounded cursor-pointer hover:bg-inner" v-ripple>
+          Logout
+        </div>
+      </div>
+    </v-menu>
+  </v-btn>
   <v-dialog :width="mdAndUp?'auto':''" v-model="dialog" transition="dialog-bottom-transition"
             :fullscreen="!mdAndUp" persistent scrollable>
     <v-card class="bg-wrapper" rounded="24">
@@ -61,13 +90,13 @@ function toggleWindow() {
               </div>
               <div class="mb-1 text-muted text-6 font-bold">请填写以下信息进行登陆</div>
               <div class="mt-10 bg-inner">
-                <v-text-field label="邮箱" hide-details/>
+                <v-text-field v-model="userAuth.email" type="email" label="邮箱" hide-details/>
               </div>
               <div class="mt-10 bg-inner">
-                <v-text-field label="密码" hide-details/>
+                <v-text-field v-model="userAuth.password" type="password" label="密码" hide-details/>
               </div>
               <div class="mt-10">
-                <v-btn color="primary" height="44" flat rounded block>继续</v-btn>
+                <v-btn @click="loginTrigger" color="primary" height="44" flat rounded block>继续</v-btn>
               </div>
             </div>
           </v-window-item>

@@ -26,12 +26,11 @@ export default defineNuxtConfig({
         '@unocss/nuxt',
         '@vueuse/nuxt',
         '@pinia/nuxt',
-        (_options, nuxt) => {
+        async (options, nuxt) => {
             nuxt.hooks.hook('vite:extendConfig', (config) => {
-                // @ts-ignore
-                config.plugins.push(vuetify({autoImport: true}))
-            })
-        },
+                config?.plugins?.push(vuetify());
+            });
+        }
     ],
     devtools: {enabled: false},
     vite: {
@@ -45,6 +44,18 @@ export default defineNuxtConfig({
         compressPublicAssets: true,
         prerender: {
             crawlLinks: true
+        },
+        devProxy: {
+            "/blog": {
+                target: "http://localhost:8080/blog",
+                changeOrigin: true,
+                prependPath: true,
+            }
+        },
+        routeRules: {
+            '/blog/**': {
+                proxy: "http://localhost:8080/blog/**",
+            }
         }
-    }
+    },
 })

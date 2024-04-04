@@ -27,7 +27,7 @@ function parseMarkdown(text: string) {
     return $.html()
 }
 
-export default defineNuxtPlugin((nuxtApp) => {
+export default defineNuxtPlugin(() => {
     return {
         provide: {
             parseMarkdown: () => parseMarkdown

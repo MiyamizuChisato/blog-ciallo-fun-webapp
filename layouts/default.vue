@@ -2,7 +2,6 @@
 import CialloHeader from "~/unique/layout/components/CialloHeader.vue";
 import CialloMain from "~/unique/layout/components/CialloMain.vue";
 import CialloFooter from "~/unique/layout/components/CialloFooter.vue";
-
 </script>
 
 <template>

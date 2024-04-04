@@ -1,13 +1,7 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
   <v-main>
-    <NuxtPage :keepalive="{include:'archives'}"/>
+    <div class="py-4">
+      <NuxtPage :keepalive="{include:'archives'}"/>
+    </div>
   </v-main>
 </template>
-
-<style scoped>
-
-</style>

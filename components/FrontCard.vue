@@ -7,7 +7,7 @@
     <div class="py-4 z-2 flex-1">
       <slot name="body"/>
     </div>
-    <div class="text-sm text-muted z-2">
+    <div class="text-sm z-2">
       <slot name="foot"/>
     </div>
     <div class="position-absolute top-0 left-0 right-0 bottom-0 z-1">

@@ -6,7 +6,7 @@ import ryou from 'assets/images/ryou.png'
 </script>
 
 <template>
-  <v-col md="3" cols="6">
+  <div class="grid-col-span-6 md:grid-col-span-3">
     <front-card>
       <template #full>
         <div class="w-full">
@@ -14,8 +14,8 @@ import ryou from 'assets/images/ryou.png'
         </div>
       </template>
     </front-card>
-  </v-col>
-  <v-col md="3" cols="6">
+  </div>
+  <div class="grid-col-span-6 md:grid-col-span-3">
     <front-card>
       <template #full>
         <div class="w-full">
@@ -23,8 +23,8 @@ import ryou from 'assets/images/ryou.png'
         </div>
       </template>
     </front-card>
-  </v-col>
-  <v-col md="3" cols="6">
+  </div>
+  <div class="grid-col-span-6 md:grid-col-span-3">
     <front-card>
       <template #full>
         <div class="w-full">
@@ -32,8 +32,8 @@ import ryou from 'assets/images/ryou.png'
         </div>
       </template>
     </front-card>
-  </v-col>
-  <v-col md="3" cols="6">
+  </div>
+  <div class="grid-col-span-6 md:grid-col-span-3">
     <front-card>
       <template #full>
         <div class="w-full">
@@ -41,9 +41,5 @@ import ryou from 'assets/images/ryou.png'
         </div>
       </template>
     </front-card>
-  </v-col>
+  </div>
 </template>
-
-<style scoped>
-
-</style>

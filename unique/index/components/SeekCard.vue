@@ -1,42 +1,40 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
-  <front-card>
-    <template #head>
-      <div>追求</div>
-    </template>
-    <template #body>
-      <div class="text-catch">
-        <div>
-          源于
+  <div class="grid-col-span-12 md:grid-col-span-5">
+    <front-card>
+      <template #head>
+        <div>追求</div>
+      </template>
+      <template #body>
+        <div class="text-catch">
+          <div>
+            源于
+          </div>
+          <div>
+            热爱而去创造
+          </div>
+          <div class="h-10 overflow-hidden">
+            <ul>
+              <li class="text-primary">
+                体验
+              </li>
+              <li class="text-success">
+                设计
+              </li>
+              <li class="text-warning">
+                作品
+              </li>
+              <li class="text-error">
+                程序
+              </li>
+              <li class="text-primary">
+                体验
+              </li>
+            </ul>
+          </div>
         </div>
-        <div>
-          热爱而去创造
-        </div>
-        <div class="h-10 overflow-hidden">
-          <ul>
-            <li class="text-primary">
-              体验
-            </li>
-            <li class="text-success">
-              设计
-            </li>
-            <li class="text-warning">
-              作品
-            </li>
-            <li class="text-error">
-              程序
-            </li>
-            <li class="text-primary">
-              体验
-            </li>
-          </ul>
-        </div>
-      </div>
-    </template>
-  </front-card>
+      </template>
+    </front-card>
+  </div>
 </template>
 
 <style scoped>
