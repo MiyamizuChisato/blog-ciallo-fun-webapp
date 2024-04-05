@@ -7,11 +7,9 @@ const cards = ref(0)
 const {data} = await testSSRApi()
 if (data.value) {
   cards.value += data.value?.payload
+}else {
+  useRouter().push('/error')
 }
-onMounted(() => {
-  console.log(data.value)
-})
-
 async function loader() {
   const {payload} = await testApi()
   cards.value += payload
@@ -22,9 +20,9 @@ async function loader() {
   <div class="mb-5" v-for="i in cards">
     <archive-card :id="i"/>
   </div>
-  <!--  <div class="mb-5">-->
-  <!--    <load-more :loader="loader">-->
-  <!--      <archive-card-loading/>-->
-  <!--    </load-more>-->
-  <!--  </div>-->
+    <div class="mb-5">
+      <load-more :loader="loader">
+        <archive-card-loading/>
+      </load-more>
+    </div>
 </template>

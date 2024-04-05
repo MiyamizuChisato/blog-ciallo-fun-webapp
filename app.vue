@@ -3,7 +3,7 @@ const {$aos} = useNuxtApp()
 const preload = ref(true)
 onMounted(() => {
   $aos().init({
-    duration: 1000,
+    duration: 900,
     disable: "mobile",
     once: true,
     offset: 0,

@@ -1,5 +1,5 @@
 enum Api {
-    test = '/testwd',
+    test = '/test',
 }
 
 export function testApi() {

@@ -29,7 +29,7 @@ function go() {
         4月 24, 2024
       </div>
       <div class="text-holder flex items-center overflow-hidden h-18 text-sm">
-        <p class="line-2 scroll-reveal">
+        <p data-aos="fade-up" class="line-2 scroll-reveal">
           苍月草是来自勇者故乡的特产，而镜莲华是这片大陆永恒的爱，虽然芙莉莲这么笨拙的精灵一定不了解镜莲华的花语，却在挑选礼物时随便的选择到了镜莲花饰的戒指...
         </p>
       </div>

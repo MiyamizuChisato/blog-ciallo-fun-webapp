@@ -7,10 +7,15 @@ import {loginApi} from "~/api/user";
 const userStore = useUserStore();
 const {mdAndUp} = useDisplay();
 const dialog = ref(false)
+const cropperDialog = ref(false)
 const sign = ref('sign-in')
 const userAuth = ref({
   email: '',
   password: ''
+})
+const cropper = ref()
+const userRegister = ref({
+  avatar:''
 })
 const isLogin = computed(() => userStore.isLogin)
 const label = computed(() => {
@@ -19,6 +24,26 @@ const label = computed(() => {
   }
   return '去登陆'
 })
+function toBase64(file:File) {
+  return  new Promise<any>((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = reject;
+  })
+}
+async function cropAvatar() {
+  cropper.value.getCropData((avatar:string)=>{
+    userRegister.value.avatar = avatar
+  })
+  cropperDialog.value=false
+}
+async function avatarChange(e) {
+  if(e.target.files[0]){
+    userRegister.value.avatar = await toBase64(e.target.files[0])
+    cropperDialog.value = true
+  }
+}
 
 function toggleWindow() {
   if (sign.value === 'sign-in') {
@@ -125,10 +150,10 @@ onMounted(async () => {
                 <v-text-field label="昵称" hide-details/>
               </div>
               <div class="mt-10 bg-inner">
-                <v-file-input label="头像" hide-details prepend-icon="">
+                <v-file-input @change="avatarChange" label="头像" hide-details prepend-icon="">
                   <template #append>
                     <div class="mr-4">
-                      <v-avatar :image="avatar"/>
+                      <v-avatar :image="userRegister.avatar"/>
                     </div>
                   </template>
                 </v-file-input>
@@ -146,5 +171,20 @@ onMounted(async () => {
         </div>
       </template>
     </v-card>
+  </v-dialog>
+  <v-dialog width="auto" v-model="cropperDialog" persistent>
+    <div class="bg-inner p-4 rounded-3 shadow">
+      <div class="text-stress">裁剪头像</div>
+      <div class="aspect-ratio-1 my-4 w-80">
+        <VueCropper ref="cropper" center-box center-wrapper fixedBox autoCrop
+                    autoCropWidth="120px" autoCropHeight="120px"
+                    :img="userRegister.avatar"/>
+      </div>
+      <div>
+        <v-btn @click="cropAvatar" color="primary" flat block>
+          确认
+        </v-btn>
+      </div>
+    </div>
   </v-dialog>
 </template>
